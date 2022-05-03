@@ -4,7 +4,7 @@ public:
         map<int, int> seen;
         for (int i = 0; i < nums.size(); i++) {
             int required = target - nums[i];
-            if (seen.find(required) != seen.end()) {
+            if (seen.count(required) > 0) {
                 return {seen[required], i};
             }
             seen[nums[i]] = i;
