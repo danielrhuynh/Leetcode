@@ -9,7 +9,6 @@ public:
             }
             seen[nums[i]] = i;
         }
-        vector<int> fakeRes = {0, 0};
-        return fakeRes;
+        return {0, 0};
     }
 };
