@@ -5,7 +5,7 @@ class Solution:
         window = {}
         
         have, need = 0, len(tCount)
-        res, resLen = [-1, -1], float('infinity')
+        res, resLen = [-1, -1], 10**5+1
         l = 0
         for r in range(len(s)):
             char = s[r]
@@ -23,5 +23,5 @@ class Solution:
                     have -= 1
                 l += 1
         l, r = res
-        return s[l:r+1] if resLen != float('infinity') else ''
+        return s[l:r+1] if resLen != 10**5+1 else ''
                     
