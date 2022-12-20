@@ -9,7 +9,6 @@ class Solution:
         for i in range(n+1):
             right = right.next
         while right != None:
-            print(left)
             right = right.next
             left = left.next
         left.next = left.next.next
