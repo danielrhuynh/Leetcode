@@ -11,6 +11,7 @@ object Solution {
             // If True return accessed index, and current index
             var required: Int = target-element
             if (seen.contains(required)) {
+                // accessing from hashmaps returns a some() type which needs to be accessed again using get
                 return Array(index, seen.get(required).get)
             }
             // If not found place element and index in hashMap in the form element: index
