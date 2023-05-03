@@ -1,8 +1,5 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        # Exit early
-        if len(s) <= 1:
-            return False
         # Use a stack
         # Need to recognize close parens to open parens:
         toCloseMap = {')':'(', ']':'[', '}':'{'}
