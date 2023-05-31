@@ -1,5 +1,9 @@
 class MyQueue:
-
+    
+    # The idea here is that we dont actually remove from the stack, we just
+    # increment our pointer to the head of the 'queue' when we pop, and also
+    # use the pointer to check if the queue has caught up to the end of the array and
+    # is 'empty'. Although we are bleeding memory using this method
     def __init__(self):
         self.stack = []
         self.index = 0
