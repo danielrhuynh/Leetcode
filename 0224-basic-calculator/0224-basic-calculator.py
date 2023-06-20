@@ -30,6 +30,7 @@ class Solution:
                 
                 # Finished processing, next iteration
                 curr = 0
+        # Handling remaining integer at end of expression
         return res + sign*curr
             
             
