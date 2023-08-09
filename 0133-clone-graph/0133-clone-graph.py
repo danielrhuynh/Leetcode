@@ -8,10 +8,12 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
+        # Mapping old nodes to new node
         oldToNew = {}
         
         def dfs(node):
             if node in oldToNew:
+                # Returns new node (the copy)
                 return oldToNew[node]
             copy = Node(node.val)
             oldToNew[node] = copy
