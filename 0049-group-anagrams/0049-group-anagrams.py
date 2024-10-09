@@ -1,15 +1,13 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        res = {}
-
-        for s in strs:
-            ctr = tuple(sorted(Counter(s).items()))
-            if ctr in res:
-                res[ctr].append(s)
+        letterMap = {}
+        
+        for string in strs:
+            key = ''.join(sorted(string))
+            if key in letterMap:
+                letterMap[key].append(string)
             else:
-                res[ctr] = [s]
-        return res.values()
-            
-            
+                letterMap[key] = [string]
         
-        
+        return [letterMap[key] for key in letterMap]
+            
