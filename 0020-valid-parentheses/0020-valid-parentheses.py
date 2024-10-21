@@ -1,15 +1,24 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        # Use a stack
-        # Need to recognize close parens to open parens:
-        toCloseMap = {')':'(', ']':'[', '}':'{'}
-        parenStack = []
-        for paren in s:
-            if paren not in toCloseMap:
-                parenStack.append(paren)
-            else:
-                if parenStack and parenStack[-1] == toCloseMap[paren]:
-                    parenStack.pop(-1)
-                else:
+        if len(s) < 2:
+            return False
+        
+        parenMap = {')': '(', ']':'[', '}':'{'}
+        stack = []
+        
+        for char in s:
+            if char in parenMap.keys():
+                if not stack:
                     return False
-        return not len(parenStack)
+                if stack[-1] == parenMap[char]:
+                    stack.pop()
+                else:
+                    stack.append(char)
+            else:
+                stack.append(char)
+        if stack:
+            return False
+        else:
+            return True
+        
+        
